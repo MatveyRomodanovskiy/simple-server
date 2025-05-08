@@ -1,3 +1,4 @@
+const fs = require('fs');
 const id = Symbol("id");
 const person = {
     name: "Sara",
@@ -39,9 +40,7 @@ function deepCollectPrimitiveFields(obj, map = new Map(), seen = new WeakSet(), 
     }
     return map;
 }
-//console.log(deepCollectPrimitiveFields(person));
-
-
+console.log(deepCollectPrimitiveFields(person));
 function saveMapToFile(map, filename = 'fields.json') {
     let json = '{\n';
 
@@ -61,5 +60,3 @@ function saveMapToFile(map, filename = 'fields.json') {
     console.log(`Saved to ${filename}`);
 }
 saveMapToFile(deepCollectPrimitiveFields(person));
-
-const fs = require('fs');

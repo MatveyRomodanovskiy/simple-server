@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 function restoreNestedObjectFromFile(filename) {
     const json = fs.readFileSync(filename, 'utf-8');
@@ -24,5 +24,4 @@ function restoreNestedObjectFromFile(filename) {
 
     return result;
 }
-//console.log(restoreNestedObjectFromFile('fields.json'));
-module.exports = { restoreNestedObjectFromFile };
+module.exports = {restoreNestedObjectFromFile};
